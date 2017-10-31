@@ -41,6 +41,50 @@ void vendor_load_properties()
         return;
 
     std::string sku = property_get("ro.boot.hardware.sku");
+    
+    // Crap for Moto E4 Plus
+    property_set("persist.cne.feature", "0");
+    property_set("ro.media.enc.aud.fileformat", "qcp");
+    property_set("ro.media.enc.aud.codec", "qcelp");
+    property_set("ro.media.enc.aud.bps", "13300");
+    property_set("ro.media.enc.aud.ch", "1");
+    property_set("ro.media.enc.aud.hz", "8000");
+    property_set("persist.rmnet.mux", "enabled");
+    property_set("persist.sys.cnd.iwlan", "0");
+    property_set("persist.cne.logging.qxdm", "0");
+    property_set("persist.vt.supported", "0");
+    property_set("persist.eab.supported", "0");
+    property_set("persist.radio.snapshot_timer", "22");
+    property_set("persist.radio.snapshot_enabled", "1");
+    property_set("persist.ims.volte", "true");
+    property_set("persist.ims.vt", "false");
+    property_set("persist.ims.vt.epdg", "false");
+    property_set("persist.ims.disableADBLogs", "2");
+    property_set("persist.ims.disableDebugLogs", "0");
+    property_set("persist.ims.disableQXDMLogs", "0");
+    property_set("persist.ims.disableIMSLogs", "0");
+    property_set("persist.rcs.supported", "0");
+    property_set("persist.rcs.presence.provision", "0");
+    property_set("persist.radio.calls.on.ims", "true");
+    property_set("persist.radio.jbims", "1");
+    property_set("persist.radio.domain.ps", "0");
+    property_set("persist.radio.VT_ENABLE", "1");
+    property_set("persist.radio.VT_HYBRID_ENABLE", "1");
+    property_set("persist.radio.ROTATION_ENABLE", "1");
+    property_set("persist.radio.REVERSE_QMI", "0");
+    property_set("persist.radio.RATE_ADAPT_ENABLE", "1");
+    property_set("persist.radio.VT_USE_MDM_TIME", "0");
+    property_set("persist.radio.videopause.mode", "0");
+    property_set("persist.data.iwlan.enable", "true");
+    property_set("persist.radio.mcfg_enabled", "1");
+    property_set("ro.mot.ignore_csim_appid", "true");
+    property_set("persist.data.netmgrd.qos.enable", "true");
+    property_set("ril.subscription.types", "NV,RUIM");
+    property_set("ro.ril.force_eri_from_xml", "true");
+    property_set("ro.telephony.get_imsi_from_sim", "true");
+    property_set("ro.telephony.default_network", "10");
+    property_set("telephony.lteOnCdmaDevice", "1");
+
     property_set("ro.product.model", sku.c_str());
 
     // rmt_storage
